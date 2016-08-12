@@ -1,0 +1,93 @@
+name:                euler
+version:             0.1.0.0
+synopsis:            Project Euler problems
+homepage:            https://github.com/letheed/euler
+license:             BSD3
+license-file:        LICENSE
+author:              Letheed
+maintainer:          dev@daweb.se
+copyright:           2016 Letheed
+category:            Math
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      lib
+                     , problems
+  exposed-modules:     Problems
+  other-modules:       Computation
+                     , LibIO
+                     , LibProblem
+                     , Math
+                     , Math.Primes
+                     , PbImports
+                     , Pb1, Pb2, Pb3, Pb4, Pb5, Pb6, Pb7, Pb8, Pb9
+                     , Pb10, Pb11, Pb12, Pb13, Pb14, Pb15, Pb16, Pb17, Pb18, Pb19
+                     , Pb20, Pb21, Pb22, Pb23, Pb24, Pb25, Pb26, Pb27, Pb28, Pb29
+                     , Pb30, Pb31, Pb32, Pb33, Pb34, Pb35, Pb36, Pb37, Pb38, Pb39
+                     , Pb40, Pb41, Pb42, Pb43, Pb44, Pb45, Pb46, Pb47, Pb48, Pb49
+                     , Pb50, Pb51 Pb52, Pb53, Pb54, Pb55, Pb56, Pb57, Pb58, Pb59
+                     , Pb60, Pb61, Pb62, Pb63, Pb64, Pb65, Pb66, Pb67, Pb68, Pb69
+                     , Pb70, Pb71, Pb72, Pb73, Pb74, Pb75, Pb76, Pb77, Pb78
+                     , Pb80, Pb81, Pb82, Pb83, Pb84, Pb85, Pb86, Pb87, Pb88, Pb89
+                     , Pb90, Pb91, Pb92, Pb93, Pb94, Pb95, Pb96, Pb97, Pb98, Pb99
+                     , Pb100, Pb101, Pb102, Pb103, Pb104, Pb105, Pb107, Pb108, Pb109
+                     , Pb110, Pb111, Pb112, Pb113, Pb114, Pb115, Pb116, Pb117, Pb118, Pb119
+                     , Pb120, Pb125
+                     , Pb151
+  build-depends:       base >= 4.7 && < 5
+                     , arithmoi >= 0.4
+                     , array >= 0.5
+                     , batteries >= 0.1
+                     , combinat >= 0.2
+                     , containers >= 0.5
+                     , data-ordlist >= 0.4
+                     , deepseq >= 1.4
+                     , eigen >= 2.1
+                     , lens >= 4.13
+                     , matrix >= 0.3
+                     , numbers >= 3000.2
+                     , primes >= 0.2
+                     , process >= 1.4
+                     , random >= 1.1
+                     , text >= 1.2
+                     , vector >= 0.11
+  default-language:    Haskell2010
+
+executable euler
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  other-modules:       Args
+                     , Args.Options
+                     , Args.PbIds
+                     , Clock
+                     , Command
+                     , Config
+                     , Present
+                     , Problem
+                     , Report
+                     , Report.Command
+                     , Report.Exec
+                     , Report.Test
+  ghc-options:         -threaded -Wall
+  build-depends:       base
+                     , euler
+                     , batteries >= 0.1
+                     , clock
+                     , containers >= 0.5
+                     , deepseq >= 1.4
+  default-language:    Haskell2010
+
+-- test-suite euler-test
+--   type:                exitcode-stdio-1.0
+--   hs-source-dirs:      test
+--   main-is:             Spec.hs
+--   build-depends:       base
+--                      , euler
+--   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+--   default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/letheed/euler
