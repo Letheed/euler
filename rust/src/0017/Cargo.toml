@@ -1,0 +1,7 @@
+[package]
+name = "0017"
+version = "0.1.0"
+authors = ["Letheed <dev@daweb.se>"]
+
+[dependencies]
+numeral = "^0.1"
