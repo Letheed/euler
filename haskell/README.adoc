@@ -1,0 +1,20 @@
+= Project Euler in Haskell
+:icons: font
+:uri-gh-pages: https://letheed.github.io/euler/haskell
+
+WARNING: This repository is under ongoing reorganization.
+Some things may be broken / messy.
+
+[.lead]
+Problems 1 to 120.
+
+== Usage
+
+[source, bash]
+----
+$ stack build
+$ stack exec euler
+----
+
+== Man pages
+Check out the {uri-gh-pages}/euler.1.html[manual].

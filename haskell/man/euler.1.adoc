@@ -1,0 +1,84 @@
+= EULER(1)
+:doctype: manpage
+:rev number: 0.1.0.0
+:man source: rgol {revnumber}
+:man manual: User Commands
+:uri-repo-root: https://github.com/letheed/euler
+:uri-repo: {uri-repo-root}/tree/master/haskell
+:uri-issues: {uri-repo-root}/issues
+
+== NAME
+euler - run solutions to Project Euler problems in Haskell
+
+== SYNOPSIS
+*euler* [*exec*] [_OPTION_]... [_PROBLEMS_]... +
+*euler* *test* [_PROBLEMS_]...
+
+== DESCRIPTION
+*exec*::
+Run _PROBLEMS_ and for each one print the execution time(s), the error status and the answer message.
+A summary is printed at the end with the number of problems solved, the summed execution time(s) and the conjunctive sum of error statuses.
++
+This is not a benchmark (no repeated runs).
+Problems are run in the order they are specified.
+
+*test*::
+Run _PROBLEMS_ and check their error status.
+Print the number and proportion of passed problems (and failed problems if any).
+For problems that failed, print the right answer, the current result, and the message.
++
+Useful to verify that you did not introduce any regression.
+
+== OPTIONS
+*-t*, *--time*[=_TIMER_[,...]]::
+Display the execution time using the specified _TIMER_(s).
+The default behavior for the program is *--time*=thread.
+If _TIMER_ is not specified, “thread” is assumed.
+A special value “none” is accepted, where execution times are not displayed.
+
+*-s*, *--sort*[=_TIMER_]::
+Sort displayed problems by decreasing execution time.
+If _TIMER_ is not specified, the first _TIMER_ in *--time* is used, or “thread” if *--time*=none.
+
+== SYNTAX
+_PROBLEMS_::
+Can be specified using any combination of the following number enumerations, separated by spaces: _X_, _X_.._Y_ and _X_,_Y_.._Z_.
+If left unspecified, all available problems are selected by default.
+
+_TIMER_::
+Can take the following values:
++
+– “thread” for thread CPU time +
+– “proc” for process CPU time.
+
+== PROBLEM ERROR STATUS
+“Ok” or “Err” if the correct answer to a problem is known, “---” otherwise.
+
+== EXAMPLES
+Run problems 1, 5 and 7:
+
+  euler 1 5 7
+
+Test every other problem from 10 to 20:
+
+  euler test 10,12..20
+
+Run problems 1 through 60 and sort them by decreasing execution time:
+
+  euler 1..60 --sort
+
+Run problems 1, 5 and every even problem from 30 up to and including 60.
+Display the thread and process CPU execution times and sort the results by decreasing thread CPU time.
+
+  euler 1 5 30,32..60 --time=thread,proc --sort
+
+== AUTHOR
+mailto:dev@daweb.se[Letheed]
+
+== SOURCE
+{uri-repo}[Repository] +
+{uri-issues}[Bug tracker]
+
+== COPYRIGHT
+Copyright © 2016 Letheed.
+License MIT.
