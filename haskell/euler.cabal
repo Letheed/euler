@@ -5,7 +5,7 @@ homepage:            https://github.com/letheed/euler
 license:             BSD3
 license-file:        LICENSE
 author:              Letheed
-maintainer:          dev@daweb.se
+maintainer:          letheed@outlook.com
 copyright:           2016 Letheed
 category:            Math
 build-type:          Simple

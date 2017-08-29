@@ -73,7 +73,7 @@ Display the thread and process CPU execution times and sort the results by decre
   euler 1 5 30,32..60 --time=thread,proc --sort
 
 == AUTHOR
-mailto:dev@daweb.se[Letheed]
+mailto:letheed@outlook.com[Letheed]
 
 == SOURCE
 {uri-repo}[Repository] +
