@@ -1,6 +1,5 @@
 [package]
 name = "0048"
 version = "0.1.0"
-authors = ["Letheed <dev@daweb.se>"]
 
 [dependencies]
