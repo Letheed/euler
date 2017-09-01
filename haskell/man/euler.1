@@ -1,100 +1,69 @@
-'\" t
-.\"     Title: euler
-.\"    Author: [see the "AUTHORS" section]
-.\" Generator: Asciidoctor 1.5.6.dev
-.\"      Date: 2016-12-30
-.\"    Manual: User Commands
-.\"    Source: rgol 0.1.0.0
-.\"  Language: English
-.\"
-.TH "EULER" "1" "2016-12-30" "rgol 0.1.0.0" "User Commands"
-.ie \n(.g .ds Aq \(aq
-.el       .ds Aq '
-.ss \n[.ss] 0
-.de URL
-\\$2 \(laURL: \\$1 \(ra\\$3
-..
-.if \n[.g] .mso www.tmac
-.LINKSTYLE blue R < >
-.SH "NAME"
+.TH EULER 1 "2016\-12\-30" "rgol 0.1.0.0" "User Commands"
+.SH NAME
+.PP
 euler \- run solutions to Project Euler problems in Haskell
-.SH "SYNOPSIS"
-\fBeuler\fP [\fBexec\fP] [\fIOPTION\fP]... [\fIPROBLEMS\fP]...
+.SH SYNOPSIS
+.PP
+\fB\fCeuler\fR [\fB\fCexec\fR] [\fIOPTION\fP]... [\fIPROBLEMS\fP]...
 .br
-\fBeuler\fP \fBtest\fP [\fIPROBLEMS\fP]...
-.SH "DESCRIPTION"
+\fB\fCeuler\fR \fB\fCtext\fR [\fIPROBLEMS\fP]...
+.SH DESCRIPTION
 .TP
-\fBexec\fP
-Run \fIPROBLEMS\fP and for each one print the execution time(s), the error status and the answer message.
-A summary is printed at the end with the number of problems solved, the summed execution time(s) and the conjunctive sum of error statuses.
+\fB\fCexec\fR
+Run \fIPROBLEMS\fP and for each one print the execution time (s), the error status and the answer message. A summary is printed at the end with the number of problems solved, the summed execution time (s) and the conjunctive sum of error statuses.
 .sp
-This is not a benchmark (no repeated runs).
-Problems are run in the order they are specified.
+This is not a benchmark (no repeated runs). Problems are run in the order they are specified.
 .TP
-\fBtest\fP
-Run \fIPROBLEMS\fP and check their error status.
-Print the number and proportion of passed problems (and failed problems if any).
-For problems that failed, print the right answer, the current result, and the message.
+\fB\fCtest\fR
+Run \fIPROBLEMS\fP and check their error status. Print the number and proportion of passed problems (and failed problems if any). For problems that failed, print the right answer, the current result, and the message.
 .sp
 Useful to verify that you did not introduce any regression.
-.SH "OPTIONS"
+.SH OPTIONS
 .TP
-\fB\-t\fP, \fB\-\-time\fP[=\fITIMER\fP[,...]]
-Display the execution time using the specified \fITIMER\fP(s).
-The default behavior for the program is \fB\-\-time\fP=thread.
-If \fITIMER\fP is not specified, “thread” is assumed.
-A special value “none” is accepted, where execution times are not displayed.
+\fB\fC\-t\fR, \fB\fC\-\-time\fR[=\fITIMER\fP[,...]]
+Display the execution time using the specified \fITIMER\fP(s). The default behavior for the program is \fB\fC\-\-time\fR=thread. If \fITIMER\fP is not specified, “thread” is assumed. A special value “none” is accepted, where execution times are not displayed.
 .TP
-\fB\-s\fP, \fB\-\-sort\fP[=\fITIMER\fP]
-Sort displayed problems by decreasing execution time.
-If \fITIMER\fP is not specified, the first \fITIMER\fP in \fB\-\-time\fP is used, or “thread” if \fB\-\-time\fP=none.
-.SH "SYNTAX"
+\fB\fC\-s\fR, \fB\fC\-\-sort\fR[=\fITIMER\fP]
+Sort displayed problems by decreasing execution time. If \fITIMER\fP is not specified, the first \fITIMER\fP in \fB\fC\-\-time\fR is used, or “thread” if \fB\fC\-\-time\fR=none.
+.SH SYNTAX
 .TP
 \fIPROBLEMS\fP
-Can be specified using any combination of the following number enumerations, separated by spaces: \fIX\fP, \fIX\fP..\fIY\fP and \fIX\fP,\fIY\fP..\fIZ\fP.
-If left unspecified, all available problems are selected by default.
+Can be specified using any combination of the following number enumerations, separated by spaces: \fIX\fP, \fIX\fP\&..\fIY\fP and \fIX\fP,\fIY\fP\&..\fIZ\fP\&. If left unspecified, all available problems are selected by default.
 .TP
 \fITIMER\fP
 Can take the following values:
 .sp
-.RS
-– “thread” for thread CPU time
+– “thread” for thread CPU time.
 .br
 – “proc” for process CPU time.
-.RE
-.SH "PROBLEM ERROR STATUS"
+.SH PROBLEM ERROR STATUS
+.PP
 “Ok” or “Err” if the correct answer to a problem is known, “\-\-\-” otherwise.
-.SH "EXAMPLES"
+.SH EXAMPLES
+.PP
 Run problems 1, 5 and 7:
-.sp
-.RS
+.IP
 euler 1 5 7
-.RE
-.sp
+.PP
 Test every other problem from 10 to 20:
-.sp
-.RS
+.IP
 euler test 10,12..20
-.RE
-.sp
+.PP
 Run problems 1 through 60 and sort them by decreasing execution time:
-.sp
-.RS
+.IP
 euler 1..60 \-\-sort
-.RE
-.sp
-Run problems 1, 5 and every even problem from 30 up to and including 60.
-Display the thread and process CPU execution times and sort the results by decreasing thread CPU time.
-.sp
-.RS
+.PP
+Run problems 1, 5 and every even problem from 30 up to and including 60. Display the thread and process CPU execution times and sort the results by decreasing thread CPU time:
+.IP
 euler 1 5 30,32..60 \-\-time=thread,proc \-\-sort
-.RE
-.SH "AUTHOR"
-.MTO "letheed\(atoutlook.com" "Letheed" ""
-.SH "SOURCE"
-.URL "https://github.com/letheed/euler/tree/master/haskell" "Repository" ""
+.SH AUTHOR
+.PP
+Letheed \[la]letheed@outlook.com\[ra]
+.SH SOURCE
+.PP
+Repository \[la]https://github.com/letheed/euler/tree/master/haskell\[ra]
 .br
-.URL "https://github.com/letheed/euler/issues" "Bug tracker" ""
-.SH "COPYRIGHT"
-Copyright © 2016 Letheed.
-License BSD3.
+Bug tracker \[la]https://github.com/letheed/euler/issues\[ra]
+.SH COPYRIGHT
+.PP
+Copyright © 2016 Letheed. License BSD3.
